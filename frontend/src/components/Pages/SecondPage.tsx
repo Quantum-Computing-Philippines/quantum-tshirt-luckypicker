@@ -1,26 +1,32 @@
 import router from 'next/router';
 import { useState } from 'react';
-
 import { RandomGraphView } from '@/helpers/RandomGraphView';
 import { Table } from '@/helpers/Table';
 
 export const SecondPage = () => {
   const [showModal, setShowModal] = useState(false);
-  const [ShowModalSmallTshirt, setShowModalSmallTshirt] = useState(false);
-
+  const [ShowModalTshirt, setShowModalTshirt] = useState(false);
+  const [InLineSizeProps, setInLineSizeProps] = useState(null);
   const handleSizeClick = (size) => {
     switch (size) {
       case 'S':
         setShowModal(true);
+        setInLineSizeProps('Small')
         break;
       case 'M':
         // handle M click
+        setShowModal(true);
+        setInLineSizeProps('Medium')
         break;
       case 'L':
         // handle L click
+        setShowModal(true);
+        setInLineSizeProps('Large')
         break;
       case 'XL':
         // handle XL click
+        setShowModal(true);
+        setInLineSizeProps('XL')
         break;
       default:
         break;
@@ -31,9 +37,8 @@ export const SecondPage = () => {
     setShowModal(false);
   };
 
-  // Small
-  const handleSmallTshirtClick = () => {
-    setShowModalSmallTshirt(true);
+  const handleTshirtClick = () => {
+    setShowModalTshirt(true);
   };
 
   function handleHomeClick() {
@@ -119,14 +124,14 @@ export const SecondPage = () => {
             style={{ zIndex: 9999 }}
           >
             <p className="mb-4 text-2xl text-white">
-              Show the list for participants for SMALL category?
+              Show the list for participants for <span className='underline'>{InLineSizeProps}</span> category?
             </p>
 
             <button
               className="mx-10 rounded bg-white px-4 py-2 text-gray-900"
               onClick={() => {
                 handleModalClose();
-                handleSmallTshirtClick();
+                handleTshirtClick();
               }}
             >
               Yes
@@ -141,18 +146,22 @@ export const SecondPage = () => {
           </div>
         </div>
       )}
-      {/* Small Winners List */}
-      {ShowModalSmallTshirt && (
+      {/* Participants List */}
+       
+
+      {ShowModalTshirt && (
         <>
           <div className="flex justify-center ">
             <div className="w-1/2 px-4">
               {/* Content for the left column */}
-              <Table />
+              <Table PassPropSize={InLineSizeProps}/>
+             
             </div>
             <div className="flex w-1/2 flex-col items-center justify-center  px-4">
               {/* Content for the right column */}
-              {/* <NamesShuffler /> */}
-              <RandomGraphView />
+             
+              <p>The contents of InLineSizeProps before passing to RandomGraphView: {InLineSizeProps}</p>
+              <RandomGraphView PassPropSize={InLineSizeProps} />
             </div>
           </div>
         </>

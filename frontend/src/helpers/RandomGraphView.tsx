@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import Status from './Status';
 
-export function RandomGraphView() {
+export function RandomGraphView({PassPropSize}) {
+
+  console.log(`The contents of PassPropSize RGV ${PassPropSize}`);
   const [chartBars, setChartBars] = useState([]);
   const [startAnimation, setStartAnimation] = useState(false);
   const [showButton, setShowButton] = useState(true);
@@ -142,7 +144,8 @@ export function RandomGraphView() {
             borderRight: '3px solid #26466D',
           }}
         ></div>
-        {showStatus && <Status />}
+        <p>The contents of PassPropSize before passing to Status: {PassPropSize}</p>
+        {showStatus && <Status PassPropSizeToStatus={PassPropSize.toString()} />}
       </div>
     </>
   );

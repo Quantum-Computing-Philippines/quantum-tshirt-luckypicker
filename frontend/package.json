@@ -21,6 +21,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "@types/canvas-confetti": "^1.6.0",
     "canvas-confetti": "^1.6.0",
     "googleapis": "^113.0.0",
@@ -29,9 +30,11 @@
     "next-seo": "^5.15.0",
     "next-sitemap": "^4.0.5",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
-    "react-scroll-to-bottom": "^4.2.0"
+    "react-scroll-to-bottom": "^4.2.0",
+    "react-vis": "^1.11.12"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",

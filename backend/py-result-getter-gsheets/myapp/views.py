@@ -41,4 +41,9 @@ def get_sizes(request):
         all_sizes_dict[size] = names_dict
 
     # Return the dictionary as JSON response
-    return JsonResponse(all_sizes_dict)
+    response =  JsonResponse(all_sizes_dict)
+    response["Access-Control-Allow-Origin"] = "*"
+    response["Access-Control-Allow-Methods"] = "GET, OPTIONS"
+    response["Access-Control-Max-Age"] = "1000"
+    response["Access-Control-Allow-Headers"] = "X-Requested-With, Content-Type"
+    return response

@@ -40,7 +40,13 @@ def luckypic(request):
         counts = {int(k, 2): v for k, v in result.get_counts(qc).items()}
 
         # Return the measurement outcomes as a JSON response
-        return JsonResponse({'counts': counts})
+        response =  JsonResponse({'counts': counts})
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET, OPTIONS"
+        response["Access-Control-Max-Age"] = "1000"
+        response["Access-Control-Allow-Headers"] = "X-Requested-With, Content-Type"
+        return response
+
 
     else:
         # Return an error response if the request method is not POST

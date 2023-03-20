@@ -1,7 +1,7 @@
 import router from 'next/router';
 import React, { useEffect, useState } from 'react';
 
-function Status() {
+function Status({ PassPropSizeToStatus }) {
   const messages = [
     'Reading from database',
     'Assigning Ticket ID to users',
@@ -19,12 +19,19 @@ function Status() {
     return () => clearInterval(interval);
   }, []);
 
+  console.log(`PassPropSizeToStatus: ${PassPropSizeToStatus}`);
+
   // Show modal after last message
   useEffect(() => {
     if (index === messages.length - 1) {
       console.log('DONEE');
       setIsFinished(true);
-      router.push('/winner');
+      router.push({
+        pathname: '/winner',
+        query: { data: PassPropSizeToStatus.toString() }
+      });
+      
+      
     }
   }, [index]);
 

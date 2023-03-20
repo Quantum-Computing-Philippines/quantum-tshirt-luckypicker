@@ -7,7 +7,14 @@ function Confetti() {
   useEffect(() => {
     const duration = 15 * 1000;
     const animationEnd = Date.now() + duration;
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+    const defaults = { 
+      startVelocity: 30, 
+      spread: 360, 
+      ticks: 60, 
+      zIndex: 0,
+      particleWidth: 30,
+      particleHeight: 30,
+    };
 
     function randomInRange(min, max) {
       return Math.random() * (max - min) + min;
