@@ -1,0 +1,26 @@
+#chart {
+  width: 500px;
+  height: 200px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  .chart-bar {
+    width: 20px;
+    height: 5px;
+    background-color: #0147fa;
+    position: absolute;
+    margin-left: 50px;
+    bottom: 0;
+    border-radius: 6px 0px 0px 0px;
+    border-right: 3px solid #26466d;
+    margin-left: 100px;
+    &:after {
+      content: " ";
+      width: 20px;
+      height: 5px;
+      background-color: #26466d;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
