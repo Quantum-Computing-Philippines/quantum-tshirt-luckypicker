@@ -30,9 +30,14 @@ if values:
         else:
             size_dict[row[1]] = {'names': [row[0]], 'num': 0}
 
-# Print the dictionary in the requested format
+# Create a dictionary with all sizes
+all_sizes_dict = {}
 for size, data in size_dict.items():
     num = data['num']
     names_dict = {i+num: name for i, name in enumerate(data['names'])}
     size_dict[size]['num'] += len(data['names'])
-    print(f"{size}: {json.dumps(names_dict)}")
+    all_sizes_dict[size] = names_dict
+
+# Print the dictionary in the requested format
+json_response = json.dumps(all_sizes_dict)
+print(json_response)

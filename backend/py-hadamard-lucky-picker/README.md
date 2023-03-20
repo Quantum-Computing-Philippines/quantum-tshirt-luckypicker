@@ -114,3 +114,91 @@ jsonCopy code
     "71": 15,
     "72": 15 ... "127" : 12 }
     } `
+
+
+# Extending: Creating a Django Application
+Sure, here are the steps to create a "Hello, world!" Django application:
+
+1.  Open a terminal or command prompt and navigate to the directory where you want to create your Django project.
+    
+2.  Create a new Django project by running the following command:
+    
+    Copy code
+    
+    `django-admin startproject myproject` 
+    
+    Replace `myproject` with the name of your project.
+    
+3.  Navigate to the project directory by running:
+    
+    bashCopy code
+    
+    `cd myproject` 
+    
+4.  Create a new Django app by running the following command:
+    
+    Copy code
+    
+    `python manage.py startapp myapp` 
+    
+    Replace `myapp` with the name of your app.
+    
+5.  Open the `myproject/settings.py` file in a text editor and add `'myapp'` to the `INSTALLED_APPS` list:
+    
+    pythonCopy code
+    ```
+    `INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'myapp',
+    ]` 
+    ```
+6.  Open the `myapp/views.py` file in a text editor and define a new view function that returns a `HttpResponse` with the message "Hello, world!":
+    
+    pythonCopy code
+    ```
+    `from django.http import HttpResponse
+    
+    def hello(request):
+        return HttpResponse("Hello, world!")` 
+    ```
+    
+7.  Open the `myapp/urls.py` file in a text editor and define a new URL pattern that maps the URL `/hello/` to the `hello` view function:
+    
+    pythonCopy code
+    ```
+    `from django.urls import path
+    from . import views
+    
+    urlpatterns = [
+        path('hello/', views.hello, name='hello'),
+    ]` 
+    ```
+8.  Open the `myproject/urls.py` file in a text editor and include the `myapp.urls` module:
+    
+    pythonCopy code
+    ```
+    `from django.contrib import admin
+    from django.urls import include, path
+    
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('myapp/', include('myapp.urls')),
+    ]` 
+    ```
+    This includes the `myapp.urls` module under the `/myapp/` URL prefix.
+    
+9.  Start the development server by running the following command:
+    
+    Copy code
+    
+    `python manage.py runserver` 
+    
+10.  Open a web browser and navigate to `http://localhost:8000/myapp/hello/`. You should see the message "Hello, world!".
+    
+
+That's it! You've created a simple "Hello, world!" Django application.
