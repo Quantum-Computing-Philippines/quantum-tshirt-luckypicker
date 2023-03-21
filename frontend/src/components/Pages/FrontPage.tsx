@@ -51,7 +51,7 @@ export const FrontPage = () => {
         </div>
         <div className="col-span-1 col-start-2 col-end-3 text-center">
           <p className="body-font flex h-full items-center justify-center text-center font-cherrybombone text-6xl text-black">
-            bit.ly/linkRaffle
+          RANDOM_SHORT_LINK
           </p>
         </div>
         <div className="col-span-1 flex items-center justify-center ">
@@ -71,7 +71,7 @@ export const FrontPage = () => {
         <div className="flex w-full max-w-xl items-center justify-between">
           <div className="mx-auto flex items-center">
             <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://example.com"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://RANDOM_SHORT_LINK"
               alt="QR code"
             />
           </div>
