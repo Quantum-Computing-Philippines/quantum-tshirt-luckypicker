@@ -49,8 +49,8 @@ export const FrontPage = () => {
             justify-center
           />
         </div>
-        <div className="col-span-1 col-start-2 col-end-3 text-center">
-          <p className="body-font flex h-full items-center justify-center text-center font-cherrybombone text-6xl text-black">
+        <div className="col-span-2 col-start-2 col-end-3 text-center">
+          <p className="body-font flex h-full items-center justify-center text-center font-bold text-6xl text-black">
           RANDOM_SHORT_LINK
           </p>
         </div>

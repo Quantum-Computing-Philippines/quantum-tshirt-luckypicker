@@ -11,7 +11,7 @@ export const Table = ({PassPropSize}) => {
   const [PropsCountParticipants, setPropsCountParticipants] = useState(0);
 useEffect(() => {
   console.log('Being triggered');
-  fetch('http://206.81.23.174:9000/get_sizes/')
+  fetch('http://URL:PORT/get_sizes/')
     .then((response) => response.json())
     .then((data) => {
       setData(data[PassPropSize]);

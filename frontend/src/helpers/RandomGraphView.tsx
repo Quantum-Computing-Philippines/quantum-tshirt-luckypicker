@@ -144,7 +144,7 @@ export function RandomGraphView({PassPropSize}) {
             borderRight: '3px solid #26466D',
           }}
         ></div>
-        <p>The contents of PassPropSize before passing to Status: {PassPropSize}</p>
+
         {showStatus && <Status PassPropSizeToStatus={PassPropSize.toString()} />}
       </div>
     </>

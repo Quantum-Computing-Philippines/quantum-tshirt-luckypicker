@@ -6,7 +6,7 @@ import json
 def get_sizes(request):
     # Replace with your Google Sheets file ID and sheet name
     SPREADSHEET_ID = '1QdksCQqZDNn_KTOf5tFTDcqUttF3eCcj12E-6kAZ0mA'
-    SHEET_NAME = 'Dev1'
+    SHEET_NAME = '3'
 
     # Replace with the path to your service account key file
     SERVICE_ACCOUNT_FILE = './google-service-account-json/tshirtrandompicker-1d10f942a8d4.json'

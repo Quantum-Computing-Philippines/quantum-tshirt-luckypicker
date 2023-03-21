@@ -160,7 +160,7 @@ export const SecondPage = () => {
             <div className="flex w-1/2 flex-col items-center justify-center  px-4">
               {/* Content for the right column */}
              
-              <p>The contents of InLineSizeProps before passing to RandomGraphView: {InLineSizeProps}</p>
+
               <RandomGraphView PassPropSize={InLineSizeProps} />
             </div>
           </div>

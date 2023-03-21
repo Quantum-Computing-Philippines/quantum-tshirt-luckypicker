@@ -21,7 +21,7 @@ export default function winner({}: Props) {
   // 127 bits
   useEffect(() => {
     const fetchCounts = async () => {
-      const response = await fetch('http://206.81.23.174:8000/myapp/luckypic/');
+      const response = await fetch('http://backend-qiskit-gsheets.goquantum.online:8000/myapp/luckypic/');
       const data = await response.json();
       setCounts(data.counts);
     };
@@ -39,7 +39,7 @@ export default function winner({}: Props) {
 
 
   useEffect(() => {
-    fetch('http://206.81.23.174:9000/get_sizes/')
+    fetch('http://URL:PORT/get_sizes/')
       .then((response) => response.json())
       .then((dataTable) => {
         setDataTable(dataTable[dataSizePassUrlValue.toString()]);
