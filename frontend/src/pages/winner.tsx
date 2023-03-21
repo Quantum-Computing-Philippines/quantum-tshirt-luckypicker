@@ -68,7 +68,11 @@ export default function winner({}: Props) {
     router.push('/play');
   }
 
-
+  function handleRefreshClick() {
+    if (window.confirm('Do you want to draw another winnner?')) {
+      router.reload();
+    }
+  }
 
   // Get the highest occurrence from the counts object
 
@@ -112,6 +116,15 @@ export default function winner({}: Props) {
 
   return (
     <>
+            <div className="fixed bottom-64 left-0 mx-10 h-24 w-24">
+          <button onClick={handleRefreshClick}>
+            <img
+              src="https://www.svgrepo.com/show/244156/refresh.svg"
+              alt="Home icon"
+              className="h-full w-full transition duration-300 hover:scale-110"
+            ></img>
+          </button>
+        </div>
       <Confetti />
       <div className="fixed bottom-0 left-0 mx-10 mb-16 h-24 w-24">
         <button onClick={handleHomeClick}>
@@ -133,8 +146,8 @@ export default function winner({}: Props) {
       /* ... */
       
       <>
-      <div> keyCount has a value of number</div>
-      <XYPlot xType="ordinal" width={1700} height={500}>
+      <div className="body-font flex h-full items-center justify-center text-center font-cherrybombone text-6xl text-black underline" > Result of Superposition of Hadamard Gates  - {dataSizePassUrlValue}</div>
+      <XYPlot xType="ordinal" width={1700} height={400}>
         <XAxis tickLabelAngle={-90} />
         <YAxis />
         <VerticalBarSeries
@@ -152,9 +165,13 @@ export default function winner({}: Props) {
           </Hint>
         )}
       </XYPlot>
-        <p className="body-font flex h-full items-center justify-center text-center font-cherrybombone text-3xl text-black underline">
-        {`The highest occurrence is:  Ticket ID  #${highestOccurrence.key} with count of ${highestOccurrence.count} `}
-      </p>
+      <p className="body-font flex h-full items-center justify-center text-center font-cherrybombone text-3xl text-black underline">
+  The highest occurrence is: Ticket ID #{' '}
+  <span style={{color: "red"}}>{highestOccurrence.key}</span>{' '}
+  -with count of {highestOccurrence.count}
+</p>
+
+
       <p className="body-font flex h-full items-center justify-center text-center font-cherrybombone text-6xl text-black underline">
         {"The winner is     "}
         {dataTable &&
