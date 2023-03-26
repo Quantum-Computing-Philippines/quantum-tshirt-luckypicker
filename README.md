@@ -25,4 +25,9 @@ This application was created by Asher
 # Current Architecture
 
 
-![alt text](ArchitectureCurrent.png)
+![Architecture](ArchitectureCurrent.png)
+
+# Screenshots
+![First Screen](Q1.PNG)
+![Second Screen](Q2.PNG)
+![Third Screen](Q3.PNG)
